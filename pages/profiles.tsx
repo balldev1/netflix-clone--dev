@@ -73,5 +73,5 @@ const Profiles = () => {
   )
 }
 
-export default profiles
+export default Profiles
 
