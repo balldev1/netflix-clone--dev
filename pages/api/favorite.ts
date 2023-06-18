@@ -26,15 +26,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             // ถ้า เลขไม่ตรงกัน ให้ error
  
             const user = await prismadb.user.update({
-        where: {
-          email: currentUser.email || '',
-        },
-        data: {
-          favoriteIds: {
-            push: movieId
-          }
-        }
-      });
+  where: {
+    email: currentUser.email || '',
+  },
+  data: {
+    favoriteIds: { set: [movieId] },
+  },
+});
 
             // เข้าไป user เงื่อนไขการอัปเดตผู้ใช้ที่ตรงกับอีเมลของผู้ใช้ปัจจุบันเซลชั่น (currentUser.email)
             // data update ฟิล favoriteId และเพิ่มรายการใหม่ด้วย push คือเพิ่ม movieId ที่รับจาก body
