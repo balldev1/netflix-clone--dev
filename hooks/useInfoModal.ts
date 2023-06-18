@@ -14,12 +14,12 @@ export interface ModalStoreInterface {
 // openModal: (movieId: string) => void: เมธอดที่รับพารามิเตอร์เป็น movieId (ชนิดสตริง) เพื่อเปิด Modal
 // closeModal: () => void: เมธอดที่ใช้ปิด Modal
 
-const useInfoModal = create<ModalStoreInterface>((set)=>({
-  movieId: undefined ,
+const useInfoModal = create<ModalStoreInterface>((set) => ({
+  movieId: undefined,
   isOpen: false,
-  openModal: (movieId: string) => set ({ isOpen: true, movieId}),
-  onClose: () => set ({ isOpen: false, movieId: undefined})
-}))
+  openModal: (movieId: string) => set({ isOpen: true, movieId }),
+  closeModal: () => set({ isOpen: false, movieId: undefined }),
+}));
 
 // {mvid = underfined , isopen false => เปิดรับmvid set open true , mvid => ปิด set false,undefined}
 
