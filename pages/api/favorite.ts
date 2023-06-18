@@ -57,7 +57,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           email: currentUser.email || '',
         },
         data: {
-          favoriteIds: updatedFavoriteIds,
+          favoriteIds: updatedfavoriteIds,
         }
       });
 
