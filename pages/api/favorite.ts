@@ -22,15 +22,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
   
       const user = await prismadb.user.update({
-        where: {
-          email: currentUser.email || '',
-        },
-        data: {
-          favoriteIds: {
-            push: movieId
-          }
-        }
-      });
+                where: {
+                    email: currentUser.email || '',
+                },
+                data: {
+                    favoriteIds: {
+                        push: movieId,
+                    }
+                }
+            })
   
       return res.status(200).json(user);
     }
@@ -57,7 +57,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           email: currentUser.email || '',
         },
         data: {
-          favoriteIds: updatedfavoriteIds,
+          favoriteIds: updatedFavoriteIds,
         }
       });
 
