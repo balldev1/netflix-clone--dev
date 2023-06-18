@@ -138,4 +138,4 @@ const Auth = () => {
   )
 }
 
-export default auth
+export default Auth
